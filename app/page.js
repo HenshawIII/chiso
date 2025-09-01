@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import Link from "next/link"
+import AnimatedContent from "./AnimatedContent";
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -360,6 +361,7 @@ export default function Home() {
         </section>
 
         {/* About the Celebrant Section */}
+        <AnimatedContent delay={200}>
         <section className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-xl mx-8 mb-16 border border-gray-200">
           <h2 className="text-4xl font-bold text-center mb-8 text-gray-800 font-dancing">
             🎂 About the Celebrant 🎂
@@ -445,7 +447,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-
+        </AnimatedContent>
         {/* Send a Wish Section */}
        
 
@@ -454,8 +456,9 @@ export default function Home() {
           <h2 className="text-3xl font-bold text-center mb-8 text-gray-800 font-dancing">
             👗 Outfit Inspiration 👔
           </h2>
-          
+            
           {/* Women's Outfits */}
+          <AnimatedContent delay={300}>
           <div className="mb-12">
             <h3 className="text-2xl font-semibold text-center mb-6 text-gray-700">For the Ladies</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -469,8 +472,9 @@ export default function Home() {
               ))}
             </div>
           </div>
-
+          </AnimatedContent>
           {/* Men's Outfits */}
+          <AnimatedContent delay={400}>
           <div>
             <h3 className="text-2xl font-semibold text-center mb-6 text-gray-700">For the Gentlemen</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -483,6 +487,7 @@ export default function Home() {
               ))}
             </div>
           </div>
+          </AnimatedContent>
         </section>
 
         {/* Sip and Paint Section */}
@@ -509,6 +514,7 @@ export default function Home() {
           </div>
         </section>
 
+        <AnimatedContent delay={500}>
         <section className="bg-gradient-to-br from-pink-50 to-purple-50 backdrop-blur-sm rounded-2xl p-8 shadow-xl mx-8 mb-16 border border-pink-200">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl font-bold mb-6 text-gray-800 font-dancing">
@@ -582,8 +588,9 @@ With love and best wishes! 💕"
             </div>
           </div>
         </section>
-            
+        </AnimatedContent>
         {/* Call to Action */}
+        <AnimatedContent delay={500}>
         <section id="rsvp" className="opacity-90 text-center bg-gradient-to-r from-purple-400 via-purple-300 to-purple-200 rounded-2xl p-8 text-white shadow-xl mx-8 mb-16">
           <h2 className="text-3xl text-white font-bold font-dancing  opacity-100 mb-4">Ready to Celebrate? 🎊</h2>
           <p className="text-xl mb-6 opacity-100">Don't forget to dress your best and bring your creative spirit!</p>
@@ -594,7 +601,7 @@ With love and best wishes! 💕"
             RSVP Now
           </button>
         </section>
-
+        </AnimatedContent>
         {/* Footer */}
         <footer className="text-center py-8 bg-transparent backdrop-blur-sm rounded-2xl mx-8 mb-8 border border-gray-200">
           <p className="text-gray-600">Made by <a href="https://www.X.com/devansa01" target="_blank" rel="noopener noreferrer" className="text-gray-600 font-dancing font-bold">😎</a>  </p>
