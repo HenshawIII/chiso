@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function ClientGallery() {
   const [loaded, setLoaded] = useState(false);
@@ -142,22 +143,22 @@ export default function ClientGallery() {
                   </a>
                 </li>
                 <li>
-                  <a href="#outfits" onClick={closeMenu} className="flex items-center space-x-3 text-gray-700 hover:text-gray-900 transition-colors duration-200 p-3 rounded-lg hover:bg-gray-50">
-                    <span className="text-2xl">👗</span>
-                    <span className="text-lg">Outfit Inspiration</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#paint" onClick={closeMenu} className="flex items-center space-x-3 text-gray-700 hover:text-gray-900 transition-colors duration-200 p-3 rounded-lg hover:bg-gray-50">
-                    <span className="text-2xl">🎨</span>
-                    <span className="text-lg">Sip & Paint</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#rsvp" onClick={closeMenu} className="flex items-center space-x-3 text-gray-700 hover:text-gray-900 transition-colors duration-200 p-3 rounded-lg hover:bg-gray-50">
-                    <span className="text-2xl">📝</span>
-                    <span className="text-lg">RSVP</span>
-                  </a>
+                    <Link href="/#outfits"  onClick={closeMenu} className="flex items-center space-x-3 text-gray-700 hover:text-gray-900 transition-colors duration-200 p-3 rounded-lg hover:bg-gray-50">
+                      <span className="text-2xl">👗</span>
+                      <span className="text-lg">Outfit Inspiration</span>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/#paint" onClick={closeMenu} className="flex items-center space-x-3 text-gray-700 hover:text-gray-900 transition-colors duration-200 p-3 rounded-lg hover:bg-gray-50">
+                      <span className="text-2xl">🎨</span>
+                      <span className="text-lg">Sip & Paint</span>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/#rsvp" onClick={closeMenu} className="flex items-center space-x-3 text-gray-700 hover:text-gray-900 transition-colors duration-200 p-3 rounded-lg hover:bg-gray-50">
+                      <span className="text-2xl">📝</span>
+                      <span className="text-lg">RSVP</span>
+                  </Link>
                 </li>
               </ul>
             </nav>

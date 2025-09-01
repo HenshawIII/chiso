@@ -1,6 +1,7 @@
 "use client"
 import Image from "next/image";
 import { useState } from "react";
+import Link from "next/link"
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -26,7 +27,28 @@ export default function Home() {
     } catch (err) {
       console.error('Failed to copy text: ', err);
     }
-  };
+  };  
+
+  const paintImages = [
+    '/sip1.jpg',
+    '/sip2.jpg',
+    '/sip3.jpg',
+    '/sip4.jpg',
+    '/sip5.jpg',
+    '/sip6.jpg',
+    
+  ]
+
+  const ladiesImages = [
+    '/pg1.jpg',
+    '/pg2.jpg',
+    
+  ]
+  const mensImages = [
+    '/wshirt.jpg',
+    '/wpant.jpg',
+   
+  ]
 
   return (
     <div className="flex h-screen overflow-hidden">
@@ -36,7 +58,7 @@ export default function Home() {
           <defs>
             <pattern id="geometric-pattern" x="0" y="0" width="100" height="60" patternUnits="userSpaceOnUse">
               <rect fill='#A46ECC' width='100' height='60'/>
-              <g fill-opacity='1'>
+              <g fillOpacity='1'>
                 <rect fill='#A46ECC' width='11' height='11'/>
                 <rect fill='#a570cd' x='10' width='11' height='11'/>
                 <rect fill='#a672cd' y='10' width='11' height='11'/>
@@ -143,28 +165,28 @@ export default function Home() {
             <nav className="py-6 px-8">
               <ul className="space-y-4">
                 <li>
-                  <a href="/gallery" onClick={closeMenu} className="flex items-center space-x-3 text-gray-700 hover:text-gray-900 transition-colors duration-200 p-3 rounded-lg hover:bg-gray-50">
+                  <Link href="/gallery" onClick={closeMenu} className="flex items-center space-x-3 text-gray-700 hover:text-gray-900 transition-colors duration-200 p-3 rounded-lg hover:bg-gray-50">
                     <span className="text-2xl">📸</span>
                     <span className="text-lg">Photo Gallery</span>
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#outfits" onClick={closeMenu} className="flex items-center space-x-3 text-gray-700 hover:text-gray-900 transition-colors duration-200 p-3 rounded-lg hover:bg-gray-50">
+                  <Link href="/#outfits" onClick={closeMenu} className="flex items-center space-x-3 text-gray-700 hover:text-gray-900 transition-colors duration-200 p-3 rounded-lg hover:bg-gray-50">
                     <span className="text-2xl">👗</span>
                     <span className="text-lg">Outfit Inspiration</span>
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#paint" onClick={closeMenu} className="flex items-center space-x-3 text-gray-700 hover:text-gray-900 transition-colors duration-200 p-3 rounded-lg hover:bg-gray-50">
+                  <Link href="/#paint" onClick={closeMenu} className="flex items-center space-x-3 text-gray-700 hover:text-gray-900 transition-colors duration-200 p-3 rounded-lg hover:bg-gray-50">
                     <span className="text-2xl">🎨</span>
                     <span className="text-lg">Sip & Paint</span>
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#rsvp" onClick={closeMenu} className="flex items-center space-x-3 text-gray-700 hover:text-gray-900 transition-colors duration-200 p-3 rounded-lg hover:bg-gray-50">
+                  <Link href="/#rsvp" onClick={closeMenu} className="flex items-center space-x-3 text-gray-700 hover:text-gray-900 transition-colors duration-200 p-3 rounded-lg hover:bg-gray-50">
                     <span className="text-2xl">📝</span>
                     <span className="text-lg">RSVP</span>
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </nav>
@@ -299,10 +321,10 @@ export default function Home() {
                 
                 {/* Quick Navigation Pills */}
                 <div className="flex flex-wrap justify-center gap-2 mb-4">
-                  <span className="bg-purple-100 text-purple-700 px-4 py-1 rounded-full text-lg font-medium">📸 Gallery</span>
-                  <span className="bg-blue-100 text-blue-700 px-4 py-1 rounded-full text-lg font-medium">👗 Outfits</span>
-                  <span className="bg-green-100 text-green-700 px-4 py-1 rounded-full text-lg font-medium">🎨 Paint</span>
-                  <span className="bg-orange-100 text-orange-700 px-4 py-1 rounded-full text-lg font-medium">📝 RSVP</span>
+                  <Link href="/gallery" className="bg-purple-100 text-purple-700 px-4 py-1 rounded-full text-lg font-medium">📸 Gallery</Link>
+                  <Link href="/#outfits" className="bg-blue-100 text-blue-700 px-4 py-1 rounded-full text-lg font-medium">👗 Outfits</Link>
+                  <Link href="/#paint" className="bg-green-100 text-green-700 px-4 py-1 rounded-full text-lg font-medium">🎨 Paint</Link>
+                  <Link href="/#rsvp" className="bg-orange-100 text-orange-700 px-4 py-1 rounded-full text-lg font-medium">📝 RSVP</Link>
                 </div>
                 
                 {/* Birthday Info */}
@@ -337,6 +359,96 @@ export default function Home() {
           </div>
         </section>
 
+        {/* About the Celebrant Section */}
+        <section className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-xl mx-8 mb-16 border border-gray-200">
+          <h2 className="text-4xl font-bold text-center mb-8 text-gray-800 font-dancing">
+            🎂 About the Celebrant 🎂
+          </h2>
+          
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-gradient-to-br from-gray-50 to-white rounded-xl p-8 shadow-lg border border-gray-100">
+              <div className="text-center mb-6">
+                <div className="w-24 h-24 bg-gradient-to-br from-pink-400 to-purple-500 rounded-full mx-auto mb-4 flex items-center justify-center">
+                  <span className="text-4xl">✨</span>
+                </div>
+                <h3 className="text-2xl font-semibold text-gray-800 font-dancing mb-2">
+                  Celebrating 30 Amazing Years!
+                </h3>
+              </div>
+              
+              <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed">
+                <p className="text-center text-lg mb-6">
+                  Today we gather to celebrate an incredible milestone - 30 years of laughter, 
+                  love, and unforgettable memories! Our dear celebrant has touched so many lives 
+                  with their kindness, humor, and genuine spirit.
+                </p>
+                
+                <div className="grid md:grid-cols-2 gap-8 mt-8">
+                  <div className="space-y-4">
+                    <h4 className="text-xl font-semibold text-gray-800 font-dancing flex items-center">
+                      <span className="mr-2">🌟</span>
+                      What Makes Her Special
+                    </h4>
+                    <ul className="space-y-2 text-gray-600">
+                      <li className="flex items-start">
+                        <span className="text-pink-500 mr-2">•</span>
+                        Always ready with a warm smile and helping hand
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-pink-500 mr-2">•</span>
+                        Master of making everyone feel included and valued
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-pink-500 mr-2">•</span>
+                        Brings joy and laughter to every gathering
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-pink-500 mr-2">•</span>
+                        A true friend who's always there when you need them
+                      </li>
+                    </ul>
+                  </div>
+                  
+                  <div className="space-y-4">
+                    <h4 className="text-xl font-semibold text-gray-800 font-dancing flex items-center">
+                      <span className="mr-2">🎉</span>
+                      Fun Facts
+                    </h4>
+                    <ul className="space-y-2 text-gray-600">
+                      <li className="flex items-start">
+                        <span className="text-purple-500 mr-2">•</span>
+                        Loves trying new adventures and experiences
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-purple-500 mr-2">•</span>
+                        Has an amazing collection of [hobby/interest]
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-purple-500 mr-2">•</span>
+                        Known for their incredible [talent/skill]
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-purple-500 mr-2">•</span>
+                        Makes the best [favorite food/drink] you'll ever taste
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <div className="text-center mt-8 p-6 bg-gradient-to-r from-pink-50 to-purple-50 rounded-lg border border-pink-200">
+                  <p className="text-lg text-gray-700 font-medium">
+                    "Here's to 30 years of being absolutely amazing, and to many more years 
+                    of laughter, love, and wonderful memories ahead! 🥂" - <span className="font-dancing text-3xl">Chisom</span> 
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Send a Wish Section */}
+       
+
         {/* Outfit Inspiration Section */}
         <section id="outfits" className="bg-transparent backdrop-blur-sm rounded-2xl p-8 shadow-xl mx-8 mb-16 border border-gray-200">
           <h2 className="text-3xl font-bold text-center mb-8 text-gray-800 font-dancing">
@@ -347,14 +459,11 @@ export default function Home() {
           <div className="mb-12">
             <h3 className="text-2xl font-semibold text-center mb-6 text-gray-700">For the Ladies</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {[1, 2, 3, 4].map((num) => (
-                <div key={num} className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
+              {ladiesImages.map((image, index) => (
+                <div key={index} className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
                   <div className="aspect-[3/4] bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
-                    <div className="text-center text-gray-500">
-                      <div className="text-3xl mb-2">👗</div>
-                      <p className="text-sm">Outfit {num}</p>
-                      <p className="text-xs">Elegant & stylish</p>
-                    </div>
+    
+                      <Image src={image} alt="Outfit"  fill className="object-cover w-full h-auto" />
                   </div>
                 </div>
               ))}
@@ -365,14 +474,10 @@ export default function Home() {
           <div>
             <h3 className="text-2xl font-semibold text-center mb-6 text-gray-700">For the Gentlemen</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {[1, 2, 3, 4].map((num) => (
-                <div key={num} className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
+              {mensImages.map((image, index) => (
+                <div key={index} className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
                   <div className="aspect-[3/4] bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
-                    <div className="text-center text-gray-500">
-                      <div className="text-3xl mb-2">👔</div>
-                      <p className="text-sm">Outfit {num}</p>
-                      <p className="text-xs">Classy & dapper</p>
-                    </div>
+                      <Image src={image} alt="Outfit" fill className="object-cover w-full h-auto" />
                   </div>
                 </div>
               ))}
@@ -390,24 +495,94 @@ export default function Home() {
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {[1, 2, 3, 4, 5, 6].map((num) => (
-              <div key={num} className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
+            {paintImages.map((image, index) => (
+              <div key={index} className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
                 <div className="aspect-square bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
-                  <div className="text-center text-gray-500">
-                    <div className="text-4xl mb-2">🖼️</div>
-                    <p className="text-sm">Painting {num}</p>
-                    <p className="text-xs">Beautiful artwork</p>
-                  </div>
+                    <Image src={image} alt="Painting" fill className="object-cover w-full h-auto" />
                 </div>
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-all duration-300">
-                  <p className="text-white text-sm font-medium">Click to view details</p>
+                  
                 </div>
               </div>
             ))}
           </div>
         </section>
 
+        <section className="bg-gradient-to-br from-pink-50 to-purple-50 backdrop-blur-sm rounded-2xl p-8 shadow-xl mx-8 mb-16 border border-pink-200">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-4xl font-bold mb-6 text-gray-800 font-dancing">
+              💌 Send a Birthday Wish 💌
+            </h2>
+            
+            <div className="bg-white/80 backdrop-blur-sm rounded-xl p-8 shadow-lg border border-white/50 mb-8">
+              <p className="text-lg text-gray-700 leading-relaxed mb-6">
+                Want to send a special birthday message? Share your warmest wishes, 
+                favorite memories, or just say hello! Your kind words will make this 
+                celebration even more meaningful.
+              </p>
+              
+              <div className="max-w-2xl mx-auto">
+                <label htmlFor="birthday-message" className="block text-left text-gray-700 font-medium mb-3">
+                  Your Birthday Message:
+                </label>
+                <textarea
+                  id="birthday-message"
+                  rows="6"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent resize-none text-gray-700 placeholder-gray-400"
+                  placeholder="🎉 Happy 30th Birthday! 🎂
+
+Wishing you an absolutely amazing day filled with joy, laughter, and wonderful memories! May this new decade bring you endless happiness, success, and all your heart desires. Have a fantastic celebration! 🥳✨
+
+With love and best wishes! 💕"
+                  defaultValue="🎉 Happy 30th Birthday! 🎂
+
+Wishing you an absolutely amazing day filled with joy, laughter, and wonderful memories! May this new decade bring you endless happiness, success, and all your heart desires. Have a fantastic celebration! 🥳✨
+
+With love and best wishes! 💕"
+                ></textarea>
+                
+                <div className="mt-4 flex flex-col sm:flex-row gap-3 justify-center">
+                  <button
+                    onClick={() => {
+                      const messageText = document.getElementById('birthday-message').value;
+                      if (!messageText.trim()) {
+                        alert('Please enter a message before sending!');
+                        return;
+                      }
+                      const message = encodeURIComponent(messageText);
+                      const whatsappUrl = `https://wa.me/+2348132729805?text=${message}`;
+                      window.open(whatsappUrl, '_blank');
+                    }}
+                    className="inline-flex items-center px-8 py-4 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                  >
+                    <svg className="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+                    </svg>
+                    Send Message
+                  </button>
+                  
+                  <button
+                    onClick={() => {
+                      document.getElementById('birthday-message').value = "🎉 Happy 30th Birthday! 🎂\n\nWishing you an absolutely amazing day filled with joy, laughter, and wonderful memories! May this new decade bring you endless happiness, success, and all your heart desires. Have a fantastic celebration! 🥳✨\n\nWith love and best wishes! 💕";
+                    }}
+                    className="inline-flex items-center px-6 py-4 bg-gray-500 hover:bg-gray-600 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+                  >
+                    <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                    </svg>
+                    Reset to Default
+                  </button>
+                </div>
+              </div>
+            </div>
+            
+            <div className="text-sm text-gray-500">
+              <p>💡 <strong>Tip:</strong> Customize the message above or use the default greeting!</p>
+            </div>
+          </div>
+        </section>
+            
         {/* Call to Action */}
         <section id="rsvp" className="opacity-90 text-center bg-gradient-to-r from-purple-400 via-purple-300 to-purple-200 rounded-2xl p-8 text-white shadow-xl mx-8 mb-16">
           <h2 className="text-3xl text-white font-bold font-dancing  opacity-100 mb-4">Ready to Celebrate? 🎊</h2>
