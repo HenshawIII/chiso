@@ -31,12 +31,18 @@ export default function Home() {
   };  
 
   const paintImages = [
-    '/sip1.jpg',
-    '/sip2.jpg',
+    '/sip11.jpg',
+    '/sip99.jpg',
     '/sip3.jpg',
     '/sip4.jpg',
-    '/sip5.jpg',
+    '/sip12.jpg',
     '/sip6.jpg',
+    '/sip7.jpg',
+    '/sip8.jpg',
+    '/sip9.jpg',
+    '/sip1.jpg',
+    '/sip5.jpg',
+    '/sip2.jpg',
     
   ]
 
@@ -331,26 +337,9 @@ export default function Home() {
                 </div>
                 </div>
 
-                <div className="mb-6 mt-2 text-left max-w-sm mx-auto">
-            <div className="space-y-3 text-sm md:text-base text-gray-800">
-              <div className="flex items-start">
-                <span className="font-semibold min-w-[60px]">Date:</span>
-                <span className="ml-2">5th September 2025</span>
-              </div>
-              <div className="flex items-start">
-                <span className="font-semibold min-w-[60px]">Time:</span>
-                <span className="ml-2">12 noon</span>
-              </div>
-              <div className="flex items-start">
-                <span className="font-semibold min-w-[60px]">Venue:</span>
-                <span className="ml-2">Metro Park, 31 Isaac John Street, Ikeja Lagos</span>
-              </div>
-              <div className="flex items-start">
-                <span className="font-semibold min-w-[60px]">Dress Code:</span>
-                <span className="ml-2">Pink (Ladies) / White (Men)</span>
-              </div>
-            </div>
-          </div>
+                <div className="text-center text-lg text-gray-700 mb-4 ">
+                  <p className="font-dancing text-3xl">Thirty,Thriving & Thankful</p>
+                </div>
                 
                 {/* Quick Navigation Pills */}
                 <div className="flex flex-wrap justify-center gap-2 mb-4">
@@ -474,6 +463,37 @@ export default function Home() {
                     of laughter, love, and wonderful memories ahead! 🥂" - <span className="font-dancing text-3xl">Chisom</span> 
                   </p>
                 </div>
+
+                {/* Social Media Links */}
+                <div className="text-center mt-8">
+                  <h4 className="text-xl font-semibold text-gray-800 font-dancing mb-4">
+                    Follow Her Journey
+                  </h4>
+                  <div className="flex justify-center gap-6">
+                    <a 
+                      href="https://youtube.com/@chisomekaette" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="group p-4 bg-white/90 backdrop-blur-sm rounded-full shadow-lg border border-gray-200 hover:bg-red-50 hover:border-red-200 transition-all duration-300"
+                      title="Follow on YouTube"
+                    >
+                      <svg className="w-8 h-8 text-red-600 group-hover:scale-110 transition-transform duration-300" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                      </svg>
+                    </a>
+                    <a 
+                      href="https://tiktok.com/@chisomekaette" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="group p-4 bg-white/90 backdrop-blur-sm rounded-full shadow-lg border border-gray-200 hover:bg-black hover:border-gray-400 transition-all duration-300"
+                      title="Follow on TikTok"
+                    >
+                      <svg className="w-8 h-8 text-black group-hover:scale-110 transition-transform duration-300" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -532,6 +552,7 @@ export default function Home() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {paintImages.map((image, index) => (
+              <AnimatedContent delay={index * 100}>
               <div key={index} className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
                 <div className="aspect-square bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
                     <Image src={image} alt="Painting" fill className="object-cover w-full h-auto" />
@@ -541,6 +562,7 @@ export default function Home() {
                   
                 </div>
               </div>
+              </AnimatedContent>
             ))}
           </div>
         </section>
@@ -640,7 +662,7 @@ With love and best wishes! 💕"
       </div>
 
       {/* Right Half - Fixed Image */}
-      <div className="hidden bg-white xl:flex xl:w-1/2 fixed right-0 top-0 h-screen  items-start justify-center">
+      <div className="hidden bg-white xl:flex xl:w-1/2 fixed right-0 top-0 h-screen  items-center justify-center">
       
         <div className="text-center px-8 ">
           {/* Balloons */}
@@ -674,33 +696,18 @@ With love and best wishes! 💕"
             </p>
           </div>
 
-          <div className="mb-6 text-left max-w-sm mx-auto">
-            <div className="space-y-3 text-sm md:text-base text-amber-800">
-              <div className="flex items-start">
-                <span className="font-semibold min-w-[60px]">Date:</span>
-                <span className="ml-2">5th September 2025</span>
-              </div>
-              <div className="flex items-start">
-                <span className="font-semibold min-w-[60px]">Time:</span>
-                <span className="ml-2">12 noon</span>
-              </div>
-              <div className="flex items-start">
-                <span className="font-semibold min-w-[60px]">Venue:</span>
-                <span className="ml-2">Metro Park, 31 Isaac John Street, Ikeja Lagos</span>
-              </div>
-              <div className="flex items-start">
-                <span className="font-semibold min-w-[60px]">Dress Code:</span>
-                <span className="ml-2">Pink (Ladies) / White (Men)</span>
-              </div>
-            </div>
+          <div className="mb-6">
+            <p className="text-lg md:text-xl font-bold italic text-amber-800 font-dancing">Thirty,Thriving & Thankful</p>
           </div>
           
-          <div className="flex flex-wrap justify-center gap-4 text-sm md:text-base">
-              <Link href="/#outfits" className="bg-white/90 backdrop-blur-sm text-gray-700 px-4 py-2 rounded-full shadow-lg border border-gray-200">🍸Style Inspiration</Link>
-              <Link href="/#paint" className="bg-white/90 backdrop-blur-sm text-gray-700 px-4 py-2 rounded-full shadow-lg border border-gray-200">🎨 Sip & Paint</Link>
-              <Link href="/gallery" className="bg-white/90 backdrop-blur-sm text-gray-700 px-4 py-2 rounded-full shadow-lg border border-gray-200">📸 Photo Memories</Link>
-              <Link href="/#rsvp" className="bg-white/90 backdrop-blur-sm text-gray-700 px-4 py-2 rounded-full shadow-lg border border-gray-200">📝 RSVP</Link>
-            </div>
+                     <div className="flex flex-wrap justify-center gap-4 text-sm md:text-base">
+               <Link href="/#outfits" className="bg-white/90 backdrop-blur-sm text-gray-700 px-4 py-2 rounded-full shadow-lg border border-gray-200">🍸Style Inspiration</Link>
+               <Link href="/#paint" className="bg-white/90 backdrop-blur-sm text-gray-700 px-4 py-2 rounded-full shadow-lg border border-gray-200">🎨 Sip & Paint</Link>
+               <Link href="/gallery" className="bg-white/90 backdrop-blur-sm text-gray-700 px-4 py-2 rounded-full shadow-lg border border-gray-200">📸 Photo Memories</Link>
+               <Link href="/#rsvp" className="bg-white/90 backdrop-blur-sm text-gray-700 px-4 py-2 rounded-full shadow-lg border border-gray-200">📝 RSVP</Link>
+             </div>
+
+
         </div>
       </div>
     </div>
