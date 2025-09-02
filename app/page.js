@@ -699,6 +699,7 @@ With love and best wishes! 💕"
               <Link href="/#outfits" className="bg-white/90 backdrop-blur-sm text-gray-700 px-4 py-2 rounded-full shadow-lg border border-gray-200">🍸Style Inspiration</Link>
               <Link href="/#paint" className="bg-white/90 backdrop-blur-sm text-gray-700 px-4 py-2 rounded-full shadow-lg border border-gray-200">🎨 Sip & Paint</Link>
               <Link href="/gallery" className="bg-white/90 backdrop-blur-sm text-gray-700 px-4 py-2 rounded-full shadow-lg border border-gray-200">📸 Photo Memories</Link>
+              <Link href="/#rsvp" className="bg-white/90 backdrop-blur-sm text-gray-700 px-4 py-2 rounded-full shadow-lg border border-gray-200">📝 RSVP</Link>
             </div>
         </div>
       </div>
