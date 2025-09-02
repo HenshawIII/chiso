@@ -485,13 +485,13 @@ export default function Home() {
         {/* Outfit Inspiration Section */}
         <section id="outfits" className="bg-transparent backdrop-blur-sm rounded-2xl p-8 shadow-xl mx-8 mb-16 border border-gray-200">
           <h2 className="text-3xl font-bold text-center mb-8 text-gray-800 font-dancing">
-            👗 Outfit Inspiration 👔
+            👗 Style Inspiration 👔
           </h2>
             
           {/* Women's Outfits */}
           <AnimatedContent delay={300}>
           <div className="mb-12">
-            <h3 className="text-2xl font-semibold text-center mb-6 text-gray-700">For the Ladies</h3>
+            <h3 className="text-2xl font-semibold text-center mb-6 text-gray-700">For the Ladies </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {ladiesImages.map((image, index) => (
                 <div key={index} className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
@@ -507,7 +507,7 @@ export default function Home() {
           {/* Men's Outfits */}
           <AnimatedContent delay={400}>
           <div>
-            <h3 className="text-2xl font-semibold text-center mb-6 text-gray-700">For the Gentlemen</h3>
+            <h3 className="text-2xl font-semibold text-center mb-6 text-gray-700">For the Gentlemen </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {mensImages.map((image, index) => (
                 <div key={index} className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
@@ -696,9 +696,9 @@ With love and best wishes! 💕"
           </div>
           
           <div className="flex flex-wrap justify-center gap-4 text-sm md:text-base">
-              <span className="bg-white/90 backdrop-blur-sm text-gray-700 px-4 py-2 rounded-full shadow-lg border border-gray-200">🍸Food & Drinks</span>
-              <span className="bg-white/90 backdrop-blur-sm text-gray-700 px-4 py-2 rounded-full shadow-lg border border-gray-200">🎨 Sip & Paint</span>
-              <span className="bg-white/90 backdrop-blur-sm text-gray-700 px-4 py-2 rounded-full shadow-lg border border-gray-200">📸 Photo Memories</span>
+              <Link href="/#outfits" className="bg-white/90 backdrop-blur-sm text-gray-700 px-4 py-2 rounded-full shadow-lg border border-gray-200">🍸Style Inspiration</Link>
+              <Link href="/#paint" className="bg-white/90 backdrop-blur-sm text-gray-700 px-4 py-2 rounded-full shadow-lg border border-gray-200">🎨 Sip & Paint</Link>
+              <Link href="/gallery" className="bg-white/90 backdrop-blur-sm text-gray-700 px-4 py-2 rounded-full shadow-lg border border-gray-200">📸 Photo Memories</Link>
             </div>
         </div>
       </div>
