@@ -51,6 +51,15 @@ export default function Home() {
    
   ]
 
+  const celebrantImages = [
+    '/chi2.jpg',
+    '/chi1.jpg',
+    '/chi4.jpg',
+    '/chi5.jpg',
+    '/chi6.jpg',
+    '/chi7.jpg',
+  ]
+
   return (
     <div className="flex h-screen overflow-hidden">
       {/* Page Background Image */}
@@ -231,13 +240,13 @@ export default function Home() {
               <div className="space-y-6">
                 {/* First Contact */}
                 <div className="bg-gray-50 rounded-lg p-4">
-                  <h3 className="font-semibold text-gray-800 mb-2">Sarah Johnson</h3>
+                  <h3 className="font-semibold text-gray-800 mb-2">Zipporah</h3>
                   <div className="flex items-center justify-between">
                     <span className="text-gray-600">Phone:</span>
                     <div className="flex items-center space-x-2">
-                      <span className="text-gray-800">+1 (555) 123-4567</span>
+                      <span className="text-gray-800">08137512130</span>
                       <button
-                        onClick={() => copyToClipboard('+1 (555) 123-4567', 'phone1')}
+                        onClick={() => copyToClipboard('08137512130', 'phone1')}
                         className="p-1 hover:bg-gray-200 rounded transition-colors duration-200"
                         title="Copy phone number"
                       >
@@ -257,13 +266,13 @@ export default function Home() {
 
                 {/* Second Contact */}
                 <div className="bg-gray-50 rounded-lg p-4">
-                  <h3 className="font-semibold text-gray-800 mb-2">Michael Chen</h3>
+                  <h3 className="font-semibold text-gray-800 mb-2">Gift</h3>
                   <div className="flex items-center justify-between">
                     <span className="text-gray-600">Phone:</span>
                     <div className="flex items-center space-x-2">
-                      <span className="text-gray-800">+1 (555) 987-6543</span>
+                      <span className="text-gray-800">08034235269</span>
                       <button
-                        onClick={() => copyToClipboard('+1 (555) 987-6543', 'phone2')}
+                        onClick={() => copyToClipboard('08034235269', 'phone2')}
                         className="p-1 hover:bg-gray-200 rounded transition-colors duration-200"
                         title="Copy phone number"
                       >
@@ -298,27 +307,50 @@ export default function Home() {
         <section className="relative min-h-screen flex flex-col items-center justify-center px-8 py-16 text-center">
           {/* Content */}
           <div className="relative z-10 w-full h-full">
+            <AnimatedContent delay={200}>
             <div className="relative w-full h-full bg-white/40 backdrop-blur-sm rounded-2xl shadow-xl mb-16 border border-gray-200">
               <Image 
-                src="/happp.png" 
+                src="/chi3.jpg" 
                 alt="Birthday celebration background" 
                 width={400}
                 height={400}
-                className="object-contain w-full h-auto"
+                className="object-cover w-full h-auto"
                 priority
               />
             </div>
-            
+            </AnimatedContent>
+
             <div className="space-y-4 xl:hidden">
               {/* Mobile Introduction Tab */}
               <div className="">
-                <div className="text-center mb-4">
-                  <h3 className="text-4xl font-semibold md:text-5xl font-dancing text-gray-800 mb-4">You're Invited! 🎊</h3>
+                <div className="text-center mb-6">
+                  <h3 className="text-4xl font-semibold md:text-5xl font-dancing text-gray-800 mb-4">Chisoms 30th Birthday Bash! 🎊</h3>
                   <div className="text-center text-lg text-gray-700 ">
-                  <p> 30th Birthday Bash Chisom Ekaette🎉</p>
+                  {/* <p> 30th Birthday Bash Chisom Ekaette🎉</p> */}
                   <p className="mt-1"></p>
                 </div>
                 </div>
+
+                <div className="mb-6 mt-2 text-left max-w-sm mx-auto">
+            <div className="space-y-3 text-sm md:text-base text-gray-800">
+              <div className="flex items-start">
+                <span className="font-semibold min-w-[60px]">Date:</span>
+                <span className="ml-2">5th September 2025</span>
+              </div>
+              <div className="flex items-start">
+                <span className="font-semibold min-w-[60px]">Time:</span>
+                <span className="ml-2">12 noon</span>
+              </div>
+              <div className="flex items-start">
+                <span className="font-semibold min-w-[60px]">Venue:</span>
+                <span className="ml-2">Metro Park, 31 Isaac John Street, Ikeja Lagos</span>
+              </div>
+              <div className="flex items-start">
+                <span className="font-semibold min-w-[60px]">Dress Code:</span>
+                <span className="ml-2">Pink (Ladies) / White (Men)</span>
+              </div>
+            </div>
+          </div>
                 
                 {/* Quick Navigation Pills */}
                 <div className="flex flex-wrap justify-center gap-2 mb-4">
@@ -333,6 +365,7 @@ export default function Home() {
                   <p>🎉 30th Birthday Bash</p>
                   <p className="mt-1">Chisom Ekaette</p>
                 </div> */}
+                
               </div>
             </div>
           </div>
@@ -345,17 +378,15 @@ export default function Home() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Placeholder images - replace with actual celebrant photos */}
-            {[1, 2, 3, 4, 5, 6].map((num) => (
-              <div key={num} className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
-                <div className="aspect-square bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">
-                  <div className="text-center text-gray-500">
-                    <div className="text-4xl mb-2">📸</div>
-                    <p className="text-sm">Photo {num}</p>
-                    {/* <p className="text-xs">Add celebrant image here</p> */}
-                  </div>
+            {celebrantImages.map((image, index) => (
+              <AnimatedContent delay={index * 100} key={index}>
+              <div key={index} className="group relative hover:scale-110  overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
+                <div className="aspect-square bg-gradient-to-br from-gray-200  to-gray-300 flex items-center justify-center">
+                    <Image src={image} alt="Celebrant" fill className="object-cover  w-full h-auto" />
                 </div>
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
               </div>
+              </AnimatedContent>
             ))}
           </div>
         </section>
@@ -423,15 +454,15 @@ export default function Home() {
                       </li>
                       <li className="flex items-start">
                         <span className="text-purple-500 mr-2">•</span>
-                        Has an amazing collection of [hobby/interest]
+                        Has an amazing collection of hobbies
                       </li>
                       <li className="flex items-start">
                         <span className="text-purple-500 mr-2">•</span>
-                        Known for their incredible [talent/skill]
+                        Known for their incredible talent
                       </li>
                       <li className="flex items-start">
                         <span className="text-purple-500 mr-2">•</span>
-                        Makes the best [favorite food/drink] you'll ever taste
+                        Makes the best meals you'll ever taste
                       </li>
                     </ul>
                   </div>
@@ -609,22 +640,23 @@ With love and best wishes! 💕"
       </div>
 
       {/* Right Half - Fixed Image */}
-      <div className="hidden bg-white xl:flex xl:w-1/2 fixed right-0 top-0 h-screen  items-center justify-center">
+      <div className="hidden bg-white xl:flex xl:w-1/2 fixed right-0 top-0 h-screen  items-start justify-center">
       
         <div className="text-center px-8 ">
           {/* Balloons */}
-          <div className="flex justify-center items-center">
-            <Image src="/balloon.png" alt="Birthday celebration background" width={300} height={300} className="object-contain  h-auto" />
+          <div className="flex justify-center items-start">
+            <Image src="/balloon.png" alt="Birthday celebration background" width={200} height={200} className="object-contain  h-auto" />
           </div>
           {/* Main Title */}
           <div className="mb-8">
-            <h1 className="text-4xl md:text-5xl font-bold text-amber-800 mb-2 font-dancing">
+            <h1 className="text-2xl md:text-3xl font-bold text-amber-800 mb-2 font-dancing">
               30TH BIRTHDAY
             </h1>
-            <h2 className="text-5xl md:text-6xl font-bold text-amber-800 font-dancing">
+            <h2 className="text-3xl md:text-4xl font-bold text-amber-800 font-dancing">
               BASH
             </h2>
           </div>
+          
 
           {/* Name Box */}
           <div className="mb-2">
@@ -641,6 +673,28 @@ With love and best wishes! 💕"
               JOIN ME TO CELEBRATE
             </p>
           </div>
+
+          <div className="mb-6 text-left max-w-sm mx-auto">
+            <div className="space-y-3 text-sm md:text-base text-amber-800">
+              <div className="flex items-start">
+                <span className="font-semibold min-w-[60px]">Date:</span>
+                <span className="ml-2">5th September 2025</span>
+              </div>
+              <div className="flex items-start">
+                <span className="font-semibold min-w-[60px]">Time:</span>
+                <span className="ml-2">12 noon</span>
+              </div>
+              <div className="flex items-start">
+                <span className="font-semibold min-w-[60px]">Venue:</span>
+                <span className="ml-2">Metro Park, 31 Isaac John Street, Ikeja Lagos</span>
+              </div>
+              <div className="flex items-start">
+                <span className="font-semibold min-w-[60px]">Dress Code:</span>
+                <span className="ml-2">Pink (Ladies) / White (Men)</span>
+              </div>
+            </div>
+          </div>
+          
           <div className="flex flex-wrap justify-center gap-4 text-sm md:text-base">
               <span className="bg-white/90 backdrop-blur-sm text-gray-700 px-4 py-2 rounded-full shadow-lg border border-gray-200">🍸Food & Drinks</span>
               <span className="bg-white/90 backdrop-blur-sm text-gray-700 px-4 py-2 rounded-full shadow-lg border border-gray-200">🎨 Sip & Paint</span>
